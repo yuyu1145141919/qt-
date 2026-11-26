@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PatientEditView</class>
+ <widget class="QWidget" name="PatientEditView">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>520</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>编辑患者信息</string>
+  </property>
+  <layout class="QVBoxLayout" name="outerLayout">
+   <item>
+    <spacer name="topSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="centerLayout">
+     <item>
+      <spacer name="leftSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QFrame" name="editCard">
+       <property name="minimumSize">
+        <size>
+         <width>540</width>
+         <height>410</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <layout class="QHBoxLayout" name="cardLayout">
+        <property name="spacing">
+         <number>28</number>
+        </property>
+        <property name="leftMargin">
+         <number>32</number>
+        </property>
+        <property name="topMargin">
+         <number>26</number>
+        </property>
+        <property name="rightMargin">
+         <number>32</number>
+        </property>
+        <property name="bottomMargin">
+         <number>26</number>
+        </property>
+        <item>
+         <layout class="QFormLayout" name="formLayout">
+          <property name="labelAlignment">
+           <set>Qt::AlignRight|Qt::AlignVCenter</set>
+          </property>
+          <property name="horizontalSpacing">
+           <number>14</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>12</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelID">
+            <property name="text">
+             <string>ID：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="dbEditID">
+            <property name="minimumWidth">
+             <number>230</number>
+            </property>
+            <property name="placeholderText">
+             <string>例如：P0006</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="labelName">
+            <property name="text">
+             <string>姓名：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="dbEditName">
+            <property name="placeholderText">
+             <string>请输入患者真实姓名</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="labelIDCard">
+            <property name="text">
+             <string>身份证：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="dbEditIDCard">
+            <property name="maxLength">
+             <number>18</number>
+            </property>
+            <property name="placeholderText">
+             <string>15位或18位身份证号码</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="labelSex">
+            <property name="text">
+             <string>性别：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QComboBox" name="dbComboSex"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="labelDOB">
+            <property name="text">
+             <string>出生日期：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QDateEdit" name="dbDateEditDOB">
+            <property name="displayFormat">
+             <string>yyyy/M/d</string>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="labelAge">
+            <property name="text">
+             <string>年龄：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLabel" name="labelAgePreview">
+            <property name="text">
+             <string>自动计算年龄：26 岁</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="labelHeight">
+            <property name="text">
+             <string>身高(cm)：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QDoubleSpinBox" name="dbSpinHeight">
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <double>260.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="labelWeight">
+            <property name="text">
+             <string>体重(kg)：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QDoubleSpinBox" name="dbSpinWeight">
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <double>300.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="labelMobile">
+            <property name="text">
+             <string>手机号：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QLineEdit" name="dbEditMobile">
+            <property name="maxLength">
+             <number>11</number>
+            </property>
+            <property name="placeholderText">
+             <string>11位手机号码</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="rightBtnLayout">
+          <property name="spacing">
+           <number>14</number>
+          </property>
+          <item>
+           <spacer name="btnTopSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btSave">
+            <property name="minimumSize">
+             <size>
+              <width>105</width>
+              <height>38</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>保存</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btCancel">
+            <property name="minimumSize">
+             <size>
+              <width>105</width>
+              <height>38</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>取消</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="btnBottomSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <spacer name="rightSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="bottomSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
